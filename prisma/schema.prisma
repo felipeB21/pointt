@@ -62,7 +62,7 @@ model Cursor {
   createdAt DateTime  @default(now())
   likes     Int      @default(0)
   downloads Int      @default(0)
-  userId    String    @map("user_id") // Change from Int to String to match User id type
+  userId    String    @map("user_id")
   user      User      @relation(fields: [userId], references: [id])
 
   @@map("cursors")

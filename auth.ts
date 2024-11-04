@@ -25,7 +25,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
     async jwt({ token, user, profile }) {
       if (!token.sub) return token;
-      console.log(user, profile);
 
       const existingUser = await prisma.user.findUnique({
         where: { id: token.sub },
